@@ -1,0 +1,7 @@
+micro_traeffik_generic:
+  abstract_request:
+    keycloak_base_url: "%env(KEYCLOAK_BASE_URL)%"
+    keycloak_client_id: "%env(KEYCLOAK_CLIENT_ID)%"
+    keycloak_client_secret: "%env(KEYCLOAK_CLIENT_SECRET)%"
+    redis_url: "%env(REDIS_URL)%"
+    redis_token_key: "microservice.keycloak.token"

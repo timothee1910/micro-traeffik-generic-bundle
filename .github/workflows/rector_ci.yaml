@@ -1,0 +1,14 @@
+name: Rector CI
+
+on:
+  pull_request:
+
+jobs:
+  rector-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: restarteco/backend-ci/rector-ci@v3.3.3
+        with:
+          # Must be used to trigger workflow after push
+          token: ${{ secrets.ACCESS_TOKEN_RECTOR }}
+          auth_json: ${{ secrets.ACCESS_AUTH }}

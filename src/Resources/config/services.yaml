@@ -1,0 +1,33 @@
+parameters:
+  "env(MICRO_TRAEFFIK_GENERIC_DISABLE_HTTP)": "false"
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+  Micro\TraeffikGenericBundle\Service\TokenProviderService:
+    arguments:
+      $keycloakBaseUrl: "%micro_traeffik_generic.abstract_request.keycloak_base_url%"
+      $keycloakClientId: "%micro_traeffik_generic.abstract_request.keycloak_client_id%"
+      $keycloakClientSecret: "%micro_traeffik_generic.abstract_request.keycloak_client_secret%"
+      $redisKey: "%micro_traeffik_generic.abstract_request.redis_token_key%"
+      $redisUrl: "%micro_traeffik_generic.abstract_request.redis_url%"
+
+  Micro\TraeffikGenericBundle\Service\AbstractRequestService:
+    abstract: true
+    calls:
+      - setTokenProviderService:
+          ['@Micro\TraeffikGenericBundle\Service\TokenProviderService']
+      - setParameter: ["%env(MICRO_TRAEFFIK_GENERIC_DISABLE_HTTP)%"]
+
+  Micro\TraeffikGenericBundle\Service\KeycloakService:
+
+  Micro\TraeffikGenericBundle\Command\KeycloakCommand:
+    arguments:
+      - '@Micro\TraeffikGenericBundle\Service\KeycloakService'
+    tags:
+      - { name: "console.command" }
+
+  Micro\TraeffikGenericBundle\EventListener\EnumTypeListener:
+      tags:
+          - { name: doctrine.event_listener, event: postGenerateSchema }

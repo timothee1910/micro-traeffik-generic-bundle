@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+      "bmewburn.vscode-intelephense-client",
+      "editorconfig.editorconfig",
+      "redhat.vscode-yaml",
+      "yzhang.markdown-all-in-one",
+      "junstyle.php-cs-fixer"
+    ]
+  }
+  

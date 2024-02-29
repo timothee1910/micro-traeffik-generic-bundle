@@ -1,0 +1,8 @@
+parameters:
+  level: 9
+  paths:
+    - src
+    - rector.php
+includes:
+  - vendor/phpstan/phpstan-doctrine/extension.neon
+  - vendor/phpstan/phpstan-doctrine/rules.neon

@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+      ".env": "properties",
+      ".env.local": "properties",
+      ".env.test": "properties",
+      "*.neon*": "yaml"
+    },
+    "php-cs-fixer.allowRisky": true,
+    "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
+    "php-cs-fixer.onsave": false,
+    "php-cs-fixer.documentFormattingProvider": true,
+    "php-cs-fixer.config": ".php-cs-fixer.php",
+    "[php]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    }
+  }
+  
