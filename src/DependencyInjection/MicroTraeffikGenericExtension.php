@@ -14,14 +14,14 @@ use UnitEnum;
  *
  * @psalm-type ParamConfig array<int|string,array<mixed>|bool|float|int|string|UnitEnum|null>
  */
-class MicroTraeffikGenericBundleExtension extends Extension
+class MicroTraeffikGenericExtension extends Extension
 {
     /**
      * @param array<int|string,mixed> $configs
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yaml');
 
         $config = $this->processConfiguration($this->getConfiguration([], $container), $configs);
