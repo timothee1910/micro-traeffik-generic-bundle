@@ -1,5 +1,5 @@
 {
-    "name": "micro_macro/micro-traeffik-bundle",
+    "name": "timothee1910/micro-traeffik-bundle",
     "type": "symfony-bundle",
     "require": {
         "php": ">=8.2",
