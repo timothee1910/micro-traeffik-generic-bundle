@@ -14,7 +14,7 @@ use UnitEnum;
  *
  * @psalm-type ParamConfig array<int|string,array<mixed>|bool|float|int|string|UnitEnum|null>
  */
-class MicroTraeffikGenericExtension extends Extension
+class MicroTraeffikGenericBundleExtension extends Extension
 {
     /**
      * @param array<int|string,mixed> $configs
